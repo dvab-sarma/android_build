@@ -6861,7 +6861,9 @@ ifdef BOARD_CUSTOM_BOOTIMG
 	@# Prebuilt boot images
 	$(hide) mkdir -p $(zip_root)/BOOTABLE_IMAGES
 	$(hide) $(ACP) $(INSTALLED_BOOTIMAGE_TARGET) $(zip_root)/BOOTABLE_IMAGES/
+ifdef INSTALLED_RECOVERYIMAGE_TARGET
 	$(hide) $(ACP) $(INSTALLED_RECOVERYIMAGE_TARGET) $(zip_root)/BOOTABLE_IMAGES/
+endif # INSTALLED_RECOVERYIMAGE_TARGET
 endif
 ifdef BUILDING_SYSTEM_IMAGE
 	@# Contents of the system image
